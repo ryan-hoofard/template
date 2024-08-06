@@ -7,6 +7,6 @@ jobs:
   formatting:
     runs-on: ubuntu-latest
     steps:
-      - name: terraform stuff
+      - name: validation
         run: |
-          echo "successfully ran"
+          exit ${{ vars.prod_status }}
