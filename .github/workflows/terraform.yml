@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: validation
         run: |
-          exit ${{ vars.prod_status }}
+          exit ${{ vars.PROD_STATUS }}
