@@ -1,3 +1,4 @@
+name: validation workflow
 on:
   push:
     branches:
