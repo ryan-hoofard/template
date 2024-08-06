@@ -3,14 +3,30 @@ on:
   push:
     branches:
       - main
+      - qa
+      - dev
   pull_request:
     branches:
       - main
+      - qa
+      - dev
 
 jobs:
   formatting:
     runs-on: ubuntu-latest
     steps:
-      - name: validation
+      - name: prod validation
+        if: github.ref == 'refs/heads/main'
         run: |
           exit ${{ vars.PROD_STATUS }}
+          
+      - name: qa validation
+        if: github.ref == 'refs/heads/qa'
+        run: |
+          exit ${{ vars.QA_STATUS }}
+          
+      - name: dev validation
+        if: github.ref == 'refs/heads/dev'
+        run: |
+          exit ${{ vars.DEV_STATUS }}
+    
