@@ -16,17 +16,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: prod validation
-        if: github.ref == 'refs/heads/main'
+        if: github.base_ref == 'refs/heads/main' || github.ref == 'refs/heads/main'
         run: |
           exit ${{ vars.PROD_STATUS }}
           
       - name: qa validation
-        if: github.ref == 'refs/heads/qa'
+        if: github.base_ref == 'refs/heads/qa' || github.ref == 'refs/heads/qa'
         run: |
           exit ${{ vars.QA_STATUS }}
           
       - name: dev validation
-        if: github.ref == 'refs/heads/dev'
+        if: github.base_ref == 'refs/heads/dev' || github.ref == 'refs/heads/dev'
         run: |
           exit ${{ vars.DEV_STATUS }}
     
