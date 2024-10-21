@@ -14,10 +14,9 @@ jobs:
       id-token: write
       contents: read
     with:
-      region: us-west-2
+      region: us-east-1
       environment: dev
-    secrets: 
-      aws_role: ${{ secrets.AWS_ROLE_DEV }}
+      role: arn:aws:iam::767397928267:role/ryanh-github-oidc-role-test
 
 
   
