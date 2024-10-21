@@ -16,5 +16,4 @@ jobs:
     with:
       environment: prod
       region: us-west-2
-    secrets: 
-      aws_role: ${{ secrets.AWS_ROLE_PROD }}
+      role: arn:aws:iam::767397928267:role/ryanh-github-oidc-role-test
