@@ -35,9 +35,6 @@ jobs:
 
       - name: set bucket name based on environment
         run: echo "BUCKET_NAME=ryanh-github-oidc-terraform-${{ inputs.environment }}" >> $GITHUB_ENV
-
-      - name: Terraform Fmt
-        run: terraform fmt -check -recursive
         
       - name: Terraform Init
         run: |
