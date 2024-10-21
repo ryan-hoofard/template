@@ -16,5 +16,4 @@ jobs:
     with:
       environment: qa
       region: us-west-2
-    secrets: 
-      aws_role: ${{ secrets.AWS_ROLE_QA }}
+      role: arn:aws:iam::767397928267:role/ryanh-github-oidc-role-test
